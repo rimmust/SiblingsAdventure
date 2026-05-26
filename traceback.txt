@@ -1,0 +1,23 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 56, in script
+    jump optionB_menu
+renpy.script.LabelNotFound: could not find label 'optionB_menu'. Did you mean: 'optionA_menu'?
+
+-- Full Traceback ------------------------------------------------------------
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 56, in script
+    jump optionB_menu
+  File "renpy/ast.py", line 1938, in execute
+    rv = renpy.game.script.lookup(target)
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "renpy/script.py", line 1217, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'optionB_menu'. Did you mean: 'optionA_menu'?
+
+Windows-11-10.0.26200-SP0 AMD64
+Ren'Py 8.5.3.26051504
+SiblingsAdventure 1.0
+Tue May 19 17:51:35 2026

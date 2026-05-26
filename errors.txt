@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 104: end of line expected.
+    jump SubChoicePath:
+                      ^
+
+Ren'Py Version: Ren'Py 8.5.3.26051504
+Thu May 21 11:10:39 2026
