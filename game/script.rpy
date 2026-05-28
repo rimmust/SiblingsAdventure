@@ -21,7 +21,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene bg home 
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -51,6 +51,8 @@ label start:
 
     hide Gomas
 
+    # changes the bacgkround scene.
+    scene bg forest1 
     
     # Screen changes with the Menu 
     menu:
@@ -90,6 +92,10 @@ label optionA_menu:
             jump videoA3
 
 label videoA1:
+
+    # changes the bacgkround scene.
+    scene bg forest1
+
     show Luma happy at sprite_pos
 
     l "Luma you are good with symbols; can you figure out how to open this?"
@@ -260,6 +266,9 @@ label optionB_menu:
             jump videoB3
 
 label videoB1:
+
+    # changes the bacgkround scene.
+    scene bg forest2
     
     show Narrator happy at sprite_pos
 
@@ -353,6 +362,9 @@ label videoB2:
     return
 
 label videoB3:
+
+    scene bg forest1
+
     show Gomas happy at sprite_pos
 
     g "Oh! I missed this symbol. It means old trees"
