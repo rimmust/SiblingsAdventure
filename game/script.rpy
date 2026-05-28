@@ -120,9 +120,12 @@ label videoA1:
 
     hide Poppy
     
-    # plys the final aniamtion 
-    $ renpy.movie_cutscene("movies/Ending1.mpg")
+    # Shows keyfround and chest 
+    $ renpy.movie_cutscene("movies/Keyfround.mpg")  
+    $ renpy.movie_cutscene("movies/OpenTree.mpg")
     
+    # plys the final aniamtion 
+    $ renpy.movie_cutscene("movies/TresureOneGem.mpg")
 
     show Luma  happy at sprite_pos
 
@@ -160,8 +163,12 @@ label videoA2:
 
     hide Luma
     
+    # Shows keyfround and chest 
+    $ renpy.movie_cutscene("movies/Keyfround.mpg")  
+    $ renpy.movie_cutscene("movies/OpenTree.mpg")
+
     # plys the final aniamtion 
-    $ renpy.movie_cutscene("movies/Ending2.mpg")
+    $ renpy.movie_cutscene("movies/Tresureche3Gems.mpg")
     
 
     show Poppy  happy at sprite_pos
@@ -207,14 +214,25 @@ label videoA3:
     l "I am a little bit scared its been a few hours now walking "
 
     hide Luma
+
+    # Shows keyfround and chest 
+    $ renpy.movie_cutscene("movies/Keyfround.mpg")  
+    $ renpy.movie_cutscene("movies/OpenTree.mpg")
     
+   
+    show Poppy  sad  at sprite_pos
+
+    p "Oh no "
+
+    hide Poppy
+
     # plys the final aniamtion 
-    $ renpy.movie_cutscene("movies/Einding3.mpg")
-    
+    $ renpy.movie_cutscene("movies/StopZone.mpg")
+
 
     show Poppy  sad  at sprite_pos
 
-    p "Oh no we reached the no entry forest zone"
+    p "Oh no we didnt solve the mystery"
     p "Sorry guys"
 
     hide Poppy
@@ -268,18 +286,15 @@ label videoB1:
 
     hide Poppy
     
-    # plys the final aniamtion 
-    $ renpy.movie_cutscene("movies/Einding3.mpg")
-    
+    # Shows keyfround and chest 
+    $ renpy.movie_cutscene("movies/Lostincave.mpg")
 
-    show Gomas  happy at sprite_pos
-
-    g "Opps,Sorry,but I think I confused North and South"
+    show Gomas  sad  at sprite_pos
+    g "Sorry guys,but I think I confused North and South"
 
     hide Gomas
 
-
-    show Poppy  happy at sprite_pos
+    show Poppy  sad  at sprite_pos
     g "Don't worry Gomas,things that can happen"
 
     hide Poppy 
@@ -307,6 +322,10 @@ label videoB2:
     l "Look guys the box keeps glowing and glowing"
 
     hide Luma
+
+    # Shows keyfround and chest 
+    $ renpy.movie_cutscene("movies/Keyfround.mpg")  
+    $ renpy.movie_cutscene("movies/OpenTree.mpg")
     
     show Gomas  happy at sprite_pos
 
@@ -314,8 +333,9 @@ label videoB2:
 
     hide Gomas
 
+   
     # plys the final aniamtion of letter found
-    $ renpy.movie_cutscene("movies/Einding4.mpg")
+    $ renpy.movie_cutscene("movies/Tresurechest letter.mpg")
     
     show Poppy  happy at sprite_pos
 
@@ -358,7 +378,7 @@ label videoB3:
     hide Gomas
     
     # plys the final aniamtion of Cave
-    $ renpy.movie_cutscene("movies/Einding4.mpg")
+    $ renpy.movie_cutscene("movies/Lostincave.mpg")
     
     show Gomas  happy at sprite_pos
 
@@ -414,8 +434,8 @@ label videoC1:
     p "Sibling come on "
 
     hide Poppy
-    # plys the final aniamtion of Cave
-    $ renpy.movie_cutscene("movies/Einding4.mpg")
+    # plys the final aniamtion of lost in the forest 
+    $ renpy.movie_cutscene("movies/StopZone.mpg")
     
     
     show Poppy happy at sprite_pos
@@ -452,28 +472,29 @@ label videoC2:
     hide Luma
 
     #shows a subchpice video 
-    $ renpy.movie_cutscene("movies/Subchoice.mpg")
+    #$ renpy.movie_cutscene("movies/Subchoice.mpg")
 
     #shows texts of Poppy
     show Luma  happy at sprite_pos
 
-    l "Look at that chest"
+    l "Come on guys lets follow the box"
 
     hide Luma
 
+    # Shows keyfround and chest 
+    $ renpy.movie_cutscene("movies/Keyfround.mpg")  
+    $ renpy.movie_cutscene("movies/OpenTree.mpg")
+
+
     # plys the final aniamtion of letter found
-    $ renpy.movie_cutscene("movies/Einding4.mpg")
+    $ renpy.movie_cutscene("movies/Tresurechest letter.mpg")
     
-    show Poppy happy at sprite_pos
+    show Luma  happy at sprite_pos
 
-    p "Sweet Grandpaster Joe"
-    p "He wanted to give us another adventure"
+    l "He wanted to leave us a special message "
 
-    hide Poppy
+    hide Luma
 
-
-
-    
     return
 
 label videoC3:
@@ -503,8 +524,12 @@ label videoC3:
 
     hide Luma
 
-    # plys a unique ending this time.
-    $ renpy.movie_cutscene("movies/Einding5.mpg")
+    # Shows keyfround and chest 
+    $ renpy.movie_cutscene("movies/Keyfround.mpg")  
+    $ renpy.movie_cutscene("movies/OpenTree.mpg")
+
+    # plys a unique ending and found a frame
+    $ renpy.movie_cutscene("movies/Framefound.mpg")
     
     show Luma happy at sprite_pos
 
@@ -517,6 +542,13 @@ label videoC3:
     g "Well done Luma"
 
     hide Gomas
+
+    show Poppy happy at sprite_pos
+
+    p "Sweet Grandpaster Joe"
+    p "He wanted to give us this picture who he tresure a lot"
+
+    hide Poppy
 
 
     return
