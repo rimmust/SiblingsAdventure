@@ -36,6 +36,9 @@ label start:
 
     hide Narrator
 
+    # intial animation
+    $ renpy.movie_cutscene("movies/Introscene.mpg")
+
     show Luma happy at sprite_pos
 
     l "Why did Grandster Joe leave this box in his inheritance?"
@@ -48,32 +51,33 @@ label start:
 
     hide Gomas
 
-    # intial animation
-    $ renpy.movie_cutscene("movies/placeholder.mpg")
     
     # Screen changes with the Menu 
     menu:
         "Choose one of these options:"
     
         "Option 1Ask Poppy to help":
+            # Play video Poppy Blushing animation
+            $ renpy.movie_cutscene("movies/LumaWave.mpg")
             jump optionA_menu
 
-            # Play video Poppy Blushing animation
-
         "Option 2Follow Gomas idea":
+            # Play video Gomas salute animation
+            $ renpy.movie_cutscene("movies/Gomassalute.mpg")
             jump optionB_menu
 
-            # Play video Gomas salute animation
 
         "Option 3Let Luma inspect the box":
+            # Play video of Luma waving.
+            $ renpy.movie_cutscene("movies/PoppyWave.mpg")
             jump optionC_menu
 
-            # Play video of Luma waving.
-
+           
 
     # Poppy help
 label optionA_menu:
     menu:
+        
         "Choose one of these options:"
 
         "Press stars on box pattern":
@@ -97,7 +101,7 @@ label videoA1:
     p "Lets try a pattern. These triangles must mean something"
 
     hide Poppy
-    $ renpy.movie_cutscene("movies/placeholder.mpg")
+    $ renpy.movie_cutscene("movies/Startpuzzle.mpg")
 
     #Poppy speaks 
     show Poppy  happy at sprite_pos
@@ -107,7 +111,7 @@ label videoA1:
     hide Poppy
 
     #shows a subchpice video 
-    $ renpy.movie_cutscene("movies/Subchoicepath.mpg")
+    $ renpy.movie_cutscene("movies/Subchoice.mpg")
 
     #shows texts of Poppy
     show Poppy  happy at sprite_pos
@@ -136,7 +140,7 @@ label videoA2:
     p "Let me try this way"
 
     hide Poppy
-    $ renpy.movie_cutscene("movies/placeholder.mpg")
+    $ renpy.movie_cutscene("movies/Matchpuzzle.mpg")
     
 
     #This is what i added
@@ -147,7 +151,7 @@ label videoA2:
     hide Poppy
 
     #shows a subchpice video 
-    $ renpy.movie_cutscene("movies/Sunchoicepath.mpg")
+    $ renpy.movie_cutscene("movies/Subchoice.mpg")
 
     #shows texts of Poppy
     show Luma  happy at sprite_pos
@@ -184,7 +188,7 @@ label videoA3:
 
     hide Poppy
 
-    $ renpy.movie_cutscene("movies/placeholder.mpg")
+    $ renpy.movie_cutscene("movies/Puzzlesolved.mpg")
     #"You choose option 3."
 
     #This is what i added
@@ -195,7 +199,7 @@ label videoA3:
     hide Poppy
 
     #shows a subchpice video 
-    $ renpy.movie_cutscene("movies/Sunchoicepath.mpg")
+    $ renpy.movie_cutscene("movies/Allpathswalks.mpg")
 
     #shows texts of Poppy
     show Luma  happy at sprite_pos
@@ -208,7 +212,7 @@ label videoA3:
     $ renpy.movie_cutscene("movies/Einding3.mpg")
     
 
-    show Poppy  happy at sprite_pos
+    show Poppy  sad  at sprite_pos
 
     p "Oh no we reached the no entry forest zone"
     p "Sorry guys"
@@ -216,7 +220,7 @@ label videoA3:
     hide Poppy
 
 
-    show Gomas  happy at sprite_pos
+    show Gomas  sad  at sprite_pos
     g "Don't worry Poppy"
 
     hide Gomas 
@@ -245,7 +249,7 @@ label videoB1:
 
     hide Narrator
 
-    $ renpy.movie_cutscene("movies/placeholder.mpg")
+    $ renpy.movie_cutscene("movies/Starmarked.mpg")
     #"You choose option 1."
 
     show Gomas happy at sprite_pos
@@ -255,7 +259,7 @@ label videoB1:
     hide Gomas
 
     #shows a subchpice video 
-    $ renpy.movie_cutscene("movies/Sunchoicepath.mpg")
+    $ renpy.movie_cutscene("movies/Gomaswalks.mpg")
 
     #shows texts of Poppy
     show Poppy  happy at sprite_pos
@@ -290,12 +294,12 @@ label videoB2:
 
     hide Gomas
     
-    $ renpy.movie_cutscene("movies/placeholder.mpg")
+    $ renpy.movie_cutscene("movies/RiverPath.mpg")
     #"You choose option 2."
 
 
     #shows a subchpice video 
-    $ renpy.movie_cutscene("movies/Sunchoicepath.mpg")
+    $ renpy.movie_cutscene("movies/Allpathswalks.mpg")
 
     #shows texts of Poppy
     show Luma  happy at sprite_pos
@@ -342,12 +346,9 @@ label videoB3:
     hide Poppy
     
 
-    $ renpy.movie_cutscene("movies/placeholder.mpg")
+    $ renpy.movie_cutscene("movies/Recheckmapg.mpg")
     #"You choose option 3."
 
-
-    #shows a subchpice video 
-    $ renpy.movie_cutscene("movies/Sunchoicepath.mpg")
 
     #shows texts of Poppy
     show Gomas  happy at sprite_pos
@@ -395,7 +396,7 @@ label videoC1:
 
     hide Narrator
 
-    $ renpy.movie_cutscene("movies/placeholder.mpg")
+    $ renpy.movie_cutscene("movies/FlipSwitch.mpg")
     #"You choose option 1."
 
     #shows texts of Poppy
@@ -406,7 +407,7 @@ label videoC1:
     hide Poppy
 
     #shows a subchpice video 
-    $ renpy.movie_cutscene("movies/Sunchoicepath.mpg")
+    $ renpy.movie_cutscene("movies/Allpathswalks.mpg")
 
     show Poppy  happy at sprite_pos
 
@@ -441,7 +442,7 @@ label videoC2:
     hide Poppy
     
     
-    $ renpy.movie_cutscene("movies/placeholder.mpg")
+    $ renpy.movie_cutscene("movies/Boxflys.mpg")
     #"You choose option 2."
 
     show Luma  happy at sprite_pos
@@ -451,7 +452,7 @@ label videoC2:
     hide Luma
 
     #shows a subchpice video 
-    $ renpy.movie_cutscene("movies/Sunchoicepath.mpg")
+    $ renpy.movie_cutscene("movies/Subchoice.mpg")
 
     #shows texts of Poppy
     show Luma  happy at sprite_pos
@@ -489,11 +490,11 @@ label videoC3:
     hide Luma
     #
 
-    $ renpy.movie_cutscene("movies/placeholder.mpg")
+    $ renpy.movie_cutscene("movies/Compass.mpg")
     # "You choose option 3."
 
     #shows a subchpice video 
-    $ renpy.movie_cutscene("movies/Sunchoicepath.mpg")
+    $ renpy.movie_cutscene("movies/Gomaswalks.mpg")
 
     #shows texts of Poppy
     show Luma  happy at sprite_pos

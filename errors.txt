@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 104: end of line expected.
-    jump SubChoicePath:
-                      ^
+File "game/script.rpy", line 81: Indentation mismatch.
+    menu:
 
 Ren'Py Version: Ren'Py 8.5.3.26051504
-Thu May 21 11:10:39 2026
+Thu May 28 06:55:04 2026
