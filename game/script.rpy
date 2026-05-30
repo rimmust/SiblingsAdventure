@@ -12,6 +12,9 @@ transform sprite_pos:
     ypos 0.47
     xpos 0.7
 
+transform sprite_possad:
+    ypos 0.50
+    xpos 0.7
 
 # The game starts here.
 
@@ -41,15 +44,21 @@ label start:
 
     show Luma happy at sprite_pos
 
-    l "Why did Grandster Joe leave this box in his inheritance?"
+    l "Why did Grandpa Joe leave this box in his inheritance?"
 
     hide Luma
 
     show Gomas happy at sprite_pos
 
-    g "That box seems important, maybe it is a clue”"
+    g "That box seems important, maybe it is a clue."
 
     hide Gomas
+
+    show Poppy happy at sprite_pos
+
+    p "I think there is something hidden in that box, Siblings. We should check"
+
+    hide Poppy
 
     # changes the bacgkround scene.
     scene bg forest1 
@@ -58,18 +67,18 @@ label start:
     menu:
         "Choose one of these options:"
     
-        "Option 1Ask Poppy to help":
+        "Option 1 Ask Poppy to help":
             # Play video Poppy Blushing animation
             $ renpy.movie_cutscene("movies/LumaWave.mpg")
             jump optionA_menu
 
-        "Option 2Follow Gomas idea":
+        "Option 2 Let Gomas help out":
             # Play video Gomas salute animation
             $ renpy.movie_cutscene("movies/Gomassalute.mpg")
             jump optionB_menu
 
 
-        "Option 3Let Luma inspect the box":
+        "Option 3 Let Luma inspect the box":
             # Play video of Luma waving.
             $ renpy.movie_cutscene("movies/PoppyWave.mpg")
             jump optionC_menu
@@ -88,7 +97,7 @@ label optionA_menu:
         "Rotate different shapes":
             jump videoA2
 
-        "Double tap stars":
+        "Solve the puzzle":
             jump videoA3
 
 label videoA1:
@@ -98,13 +107,13 @@ label videoA1:
 
     show Luma happy at sprite_pos
 
-    l "Luma you are good with symbols; can you figure out how to open this?"
+    l "Luma, you are good with symbols; can you figure out how to open this?"
 
     hide Luma
 
     show Poppy happy at sprite_pos
 
-    p "Lets try a pattern. These triangles must mean something"
+    p "Let's try a pattern. These triangles must mean something"
 
     hide Poppy
     $ renpy.movie_cutscene("movies/Startpuzzle.mpg")
@@ -112,7 +121,8 @@ label videoA1:
     #Poppy speaks 
     show Poppy  happy at sprite_pos
 
-    p "Come on guys the box seems glowing more lets go"
+    p "Come on, guys, the box is glowing more let's go."
+    p "Look guys, let's follow that firefly. I think it will lead us somewhere."
 
     hide Poppy
 
@@ -135,10 +145,17 @@ label videoA1:
 
     show Luma  happy at sprite_pos
 
-    l "Wow guys we made it"
-    l "What a siblings adventure"
+    l "Wow guys, we made it."
+    l "What a siblings adventure."
 
     hide Luma
+
+    scene bg happyscene
+    show Narrator happy at sprite_pos
+
+    e "Lums, Gomas, and Poppy head back home, happy that their sibling adventure has come to an end."
+
+    hide Narrator
     
     return 
 
@@ -155,7 +172,7 @@ label videoA2:
     #This is what i added
     show Poppy  happy at sprite_pos
 
-    p "Look guys the box is glowing more"
+    p "Look guys, the box is glowing more."
 
     hide Poppy
 
@@ -165,7 +182,7 @@ label videoA2:
     #shows texts of Poppy
     show Luma  happy at sprite_pos
 
-    l "What is happening I think the box will explode"
+    l "What is happening? I think the box will explode."
 
     hide Luma
     
@@ -179,20 +196,27 @@ label videoA2:
 
     show Poppy  happy at sprite_pos
 
-    p "Wow guys look at all these Gems"
-    p "One for you Luma"
-    p "One for you Gomas to add to your chain and one for Me"
+    p "Wow guys, look at all these gems."
+    p "One for you, Luma"
+    p "One for you, Gomas, to add to your chain, and one for me."
     p "We made it guys.Thanks Grandpa Joe"
 
     hide Poppy
     
+    scene bg happyscene
+
+    show Narrator happy at sprite_pos
+
+    e "Lums, Gomas, and Poppy head back home, happy that their sibling adventure has come to an end."
+
+    hide Narrator
     return
 
 
 label videoA3:
     show Gomas  happy at sprite_pos
 
-    g "You can do it"
+    g "You can do it."
 
     hide Gomas
     show Poppy happy at sprite_pos
@@ -204,50 +228,34 @@ label videoA3:
     $ renpy.movie_cutscene("movies/Puzzlesolved.mpg")
     #"You choose option 3."
 
-    #This is what i added
-    show Poppy  happy at sprite_pos
-
-    p "Look guys lets follow that fire fly I think it will leads us somewhere"
-
-    hide Poppy
-
+    
     #shows a subchpice video 
     $ renpy.movie_cutscene("movies/Allpathswalks.mpg")
 
     #shows texts of Poppy
     show Luma  happy at sprite_pos
 
-    l "I am a little bit scared its been a few hours now walking "
+    l "I am a little bit scared… it's been a few hours now walking."
 
     hide Luma
-
-    # Shows keyfround and chest 
-    $ renpy.movie_cutscene("movies/Keyfround.mpg")  
-    $ renpy.movie_cutscene("movies/OpenTree.mpg")
-    
-   
-    show Poppy  sad  at sprite_pos
-
-    p "Oh no "
-
-    hide Poppy
 
     # plys the final aniamtion 
     $ renpy.movie_cutscene("movies/StopZone.mpg")
 
+    
+    show Poppy  sad at sprite_possad
 
-    show Poppy  sad  at sprite_pos
-
-    p "Oh no we didnt solve the mystery"
-    p "Sorry guys"
+    p "Oh no, we haven't solved the mystery!"
+    p "Sorry guys."
 
     hide Poppy
 
-
+   
     show Gomas  sad  at sprite_pos
-    g "Don't worry Poppy"
+    g "Don't worry Poppy."
 
     hide Gomas 
+    
     return
 
 # Gomas Options choice
@@ -259,7 +267,7 @@ label optionB_menu:
         "Follow the Star marked":
             jump videoB1
 
-        "River Path":
+        " Follow River Path":
             jump videoB2
 
         "Double check the map":
@@ -281,7 +289,7 @@ label videoB1:
 
     show Gomas happy at sprite_pos
 
-    g "We re getting close!"
+    g "We're getting close!"
 
     hide Gomas
 
@@ -291,7 +299,7 @@ label videoB1:
     #shows texts of Poppy
     show Poppy  happy at sprite_pos
 
-    p "Gomas are you sure you read the right coordiantes on the map "
+    p "Gomas, are you sure you read the right coordinates on the map?"
 
     hide Poppy
     
@@ -299,12 +307,13 @@ label videoB1:
     $ renpy.movie_cutscene("movies/Lostincave.mpg")
 
     show Gomas  sad  at sprite_pos
-    g "Sorry guys,but I think I confused North and South"
+    g "Oops, sorry… but I think I confused North and South."
 
     hide Gomas
 
+
     show Poppy  sad  at sprite_pos
-    g "Don't worry Gomas,things that can happen"
+    g "Don't worry, Gomas, things like that can happen."
 
     hide Poppy 
 
@@ -328,7 +337,7 @@ label videoB2:
     #shows texts of Poppy
     show Luma  happy at sprite_pos
 
-    l "Look guys the box keeps glowing and glowing"
+    l "Look guys, the box keeps glowing and glowing."
 
     hide Luma
 
@@ -338,7 +347,7 @@ label videoB2:
     
     show Gomas  happy at sprite_pos
 
-    g "Look at that chest guys"
+    g "Look at that chest, guys!"
 
     hide Gomas
 
@@ -348,16 +357,23 @@ label videoB2:
     
     show Poppy  happy at sprite_pos
 
-    p "WooooWWW"
+    p "WooooWWW!"
 
     hide Poppy
 
     show Luma happy at sprite_pos
 
-    l "GrandPa Joe left us this letter,that we need to tresure for all our live"
-    l "Well Done brother you lead us to the right path"
+    l "Grandpa Joe left us this letter, that we need to treasure for all our life."
+    l "Well done, brother — you led us to the right path."
 
     hide Luma
+
+    scene bg happyscene
+    show Narrator happy at sprite_pos
+
+    e "Lums, Gomas, and Poppy head back home, happy that their sibling adventure has come to an end."
+
+    hide Narrator
   
     return
 
@@ -367,13 +383,13 @@ label videoB3:
 
     show Gomas happy at sprite_pos
 
-    g "Oh! I missed this symbol. It means old trees"
+    g "Oh! I missed this symbol.It means old trees."
 
     hide Gomas
 
     show Poppy happy at sprite_pos
 
-    p "Then that s where we go."
+    p "Then that's where we go"
 
     hide Poppy
     
@@ -385,7 +401,7 @@ label videoB3:
     #shows texts of Poppy
     show Gomas  happy at sprite_pos
 
-    l "Look guys over there!"
+    l "Look guys, over there!"
 
     hide Gomas
     
@@ -394,37 +410,38 @@ label videoB3:
     
     show Gomas  happy at sprite_pos
 
-    l "Guys I think we got Lost in ahh see the box stoped Glowing"
+    l "Guys, I think we got lost… ahh, see? The box stopped glowing."
 
     hide Gomas
 
     show Luma happy at sprite_pos
 
-    l "Lets go back home"
-    l "Dont' worry Gomas"
+    l "Let's go back home."
+    l "Don't worry, Gomas"
     
-
     hide Luma
+
+
     return
 
 label optionC_menu:
     menu:
         "Choose one of these options:"
 
-        "Luma Flips the switch":
+        "Luma Presses the buzzer.":
             jump videoC1
 
-        "Stop":
+        "Stop.":
             jump videoC2
 
-        "Shake the box":
+        "Shake the box.":
             jump videoC3
 
 label videoC1:
     
     show Narrator happy at sprite_pos
 
-    e "Poppy flips the tiny switch. The box pops slightly and sparkles burst out."
+    e "Poppy presses a small buzzer. The box pops slightly and sparkles burst out."
 
     hide Narrator
 
@@ -434,7 +451,7 @@ label videoC1:
     #shows texts of Poppy
     show Poppy  happy at sprite_pos
 
-    p "Lets follow that spark"
+    p "Let's follow that spark."
 
     hide Poppy
 
@@ -443,7 +460,7 @@ label videoC1:
 
     show Poppy  happy at sprite_pos
 
-    p "Sibling come on "
+    p "Siblings, come on "
 
     hide Poppy
     # plys the final aniamtion of lost in the forest 
@@ -452,10 +469,12 @@ label videoC1:
     
     show Poppy happy at sprite_pos
 
-    p "Oh no were lost in this Cave"
-    p "Sorry guys"
+    p "Oh no, we're lost in this cave."
+    p "Sorry guys."
     
     hide Poppy
+
+  
     
     return
    
@@ -463,13 +482,13 @@ label videoC1:
 label videoC2:
     show Narrator happy at sprite_pos
 
-    e "Luma moves Poppy aside"
+    e "Luma moves Poppy aside."
 
     hide Narrator
 
     show Poppy happy at sprite_pos
 
-    p "Careful Luma"
+    p "Careful, Luma."
 
     hide Poppy
     
@@ -479,7 +498,7 @@ label videoC2:
 
     show Luma  happy at sprite_pos
 
-    l "See it want us to follow"
+    l "See? It want us to follow."
 
     hide Luma
 
@@ -489,7 +508,7 @@ label videoC2:
     #shows texts of Poppy
     show Luma  happy at sprite_pos
 
-    l "Come on guys lets follow the box"
+    l "Come on guys lets follow the box."
 
     hide Luma
 
@@ -503,22 +522,31 @@ label videoC2:
     
     show Luma  happy at sprite_pos
 
+    l "Sweet Grandpa  Joe"
     l "He wanted to leave us a special message "
 
     hide Luma
+
+    scene bg happyscene
+
+    show Narrator happy at sprite_pos
+
+    e "Lums, Gomas, and Poppy head back home, happy that their sibling adventure has come to an end."
+
+    hide Narrator
 
     return
 
 label videoC3:
     show Narrator happy at sprite_pos
 
-    e "Luma shakes the box a tiny wooden compass pops out and magically spins and points to the north."
+    e "Luma shakes the box. A tiny wooden compass pops out and magically spins, pointing to the north."
 
     hide Narrator
 
     show Luma happy at sprite_pos
 
-    l "Siblings it s' tresure time"
+    l "Treasure time siblings."
 
     hide Luma
     #
@@ -532,7 +560,7 @@ label videoC3:
     #shows texts of Poppy
     show Luma  happy at sprite_pos
 
-    l "Come on guys over there"
+    l "Come on guys, over there."
 
     hide Luma
 
@@ -545,22 +573,30 @@ label videoC3:
     
     show Luma happy at sprite_pos
 
-    l "We did is siblings welL Done"
+    l "We did it, siblings. Well done!"
 
     hide Luma
 
     show Gomas happy at sprite_pos
 
-    g "Well done Luma"
+    g "Well done,Luma"
 
     hide Gomas
 
     show Poppy happy at sprite_pos
 
     p "Sweet Grandpaster Joe"
-    p "He wanted to give us this picture who he tresure a lot"
+    p "He wanted to give us this picture, the one he treasured a lot."
 
     hide Poppy
+
+    scene bg happyscene
+    
+    show Narrator happy at sprite_pos
+
+    e "Lums, Gomas, and Poppy head back home, happy that their sibling adventure has come to an end."
+
+    hide Narrator
 
 
     return
