@@ -11,8 +11,8 @@ image Poppy sad = "images/Poppysad.png"
 
 
 #backrounds images
-image bg home  = "images/ForestBackground.png"
+image bg home  = "images/HomeBackground.png"
 image bg forest1 = "images/bg forest.jpg"
-image bg forest2  = "images/bg mountainsforest.jpg"
+image bg forest2  = "images/Background mountaing.png"
 image bg sadscene = "images/Sadscene.jpg"
 image bg happyscene  = "images/Happyscene.jpg"
