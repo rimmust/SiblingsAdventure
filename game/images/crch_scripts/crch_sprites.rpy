@@ -1,12 +1,12 @@
 #  ch Images
 
-image Gomas happy = "images/Gomas.png"
-image Luma happy = "images/luma.png"
-image Poppy happy = "images/Poppy.png"
-image Narrator happy = "images/narator.png"
-image Gomas sad = "images/Gomassad.png"
-image Luma sad = "images/Lumasad.png"
-image Poppy sad = "images/Poppysad.png"
+image Gomas happy = "images/HappyGomas.png"
+image Luma happy = "images/HappyLuma.png"
+image Poppy happy = "images/Poppyhappy.png"
+image Narrator happy = "images/Narratornew.png"
+image Gomas sad = "images/SadfacesGomas.png"
+image Luma sad = "images/SadfacesLuma.png"
+image Poppy sad = "images/SadfacesPoppy.png"
 
 
 

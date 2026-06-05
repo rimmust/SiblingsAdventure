@@ -1,23 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 56, in script
-    jump optionB_menu
-renpy.script.LabelNotFound: could not find label 'optionB_menu'. Did you mean: 'optionA_menu'?
+  File "game/script.rpy", line 40, in script
+    show Narrator happy at sprite_pos
+  File "game/script.rpy", line 40, in <module>
+    show Narrator happy at sprite_pos
+                           ^^^^^^^^^^
+NameError: name 'sprite_pos' is not defined. Did you mean: 'sprite_possad'?
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 56, in script
-    jump optionB_menu
-  File "renpy/ast.py", line 1938, in execute
-    rv = renpy.game.script.lookup(target)
-         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File "renpy/script.py", line 1217, in lookup
-    raise LabelNotFound(original)
-renpy.script.LabelNotFound: could not find label 'optionB_menu'. Did you mean: 'optionA_menu'?
+  File "game/script.rpy", line 40, in script
+    show Narrator happy at sprite_pos
+  File "renpy/ast.py", line 1364, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 726, in show_imspec
+    at_list = [renpy.python.py_eval(i) for i in at_list]
+               ~~~~~~~~~~~~~~~~~~~~^^^                  
+  File "renpy/python.py", line 1308, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 40, in <module>
+    show Narrator happy at sprite_pos
+                           ^^^^^^^^^^
+NameError: name 'sprite_pos' is not defined. Did you mean: 'sprite_possad'?
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.3.26051504
 SiblingsAdventure 1.0
-Tue May 19 17:51:35 2026
+Fri Jun  5 15:05:17 2026

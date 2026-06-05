@@ -16,6 +16,12 @@ transform sprite_possad:
     ypos 0.50
     xpos 0.7
 
+transform sprite_carpos:
+    xalign 1.0
+    yalign 1.0
+    yoffset -250
+
+
 # The game starts here.
 
 label start:
@@ -31,7 +37,7 @@ label start:
     # directory.
 
     # shows the first sentence of text
-    show Narrator happy at sprite_pos
+    show Narrator happy at sprite_carpos
 
     # These display lines of dialogue.
 
@@ -42,19 +48,19 @@ label start:
     # intial animation
     $ renpy.movie_cutscene("movies/Intoscenecolo.mpg")
 
-    show Luma happy at sprite_pos
+    show Luma happy at sprite_carpos
 
     l "Why did Grandpa Joe leave this box in his inheritance?"
 
     hide Luma
 
-    show Gomas happy at sprite_pos
+    show Gomas happy at  sprite_carpos
 
     g "That box seems important, maybe it is a clue."
 
     hide Gomas
 
-    show Poppy happy at sprite_pos
+    show Poppy happy at sprite_carpos
 
     p "I think there is something hidden in that box, Siblings. We should check"
 
@@ -69,7 +75,7 @@ label start:
     
         "Option 1 Ask Poppy to help":
             # Play video Poppy Blushing animation
-            $ renpy.movie_cutscene("movies/LumaWavem.mpg")
+            $ renpy.movie_cutscene("movies/LumaWave.mpg")
             jump optionA_menu
 
         "Option 2 Let Gomas help out":
@@ -80,7 +86,7 @@ label start:
 
         "Option 3 Let Luma inspect the box":
             # Play video of Luma waving.
-            $ renpy.movie_cutscene("movies/PoppyWave.mpg")
+            $ renpy.movie_cutscene("movies/LumaWavesm.mpg")
             jump optionC_menu
 
            
@@ -105,13 +111,13 @@ label videoA1:
     # changes the bacgkround scene.
     scene bg forest1
 
-    show Luma happy at sprite_pos
+    show Luma happy at  sprite_carpos
 
     l "Poppy, you are good with symbols; can you figure out how to open this?"
 
     hide Luma
 
-    show Poppy happy at sprite_pos
+    show Poppy happy at sprite_carpos
 
     p "Let's try a pattern. These stars must mean something"
 
@@ -119,7 +125,7 @@ label videoA1:
     $ renpy.movie_cutscene("movies/Fireflyout.mpg")
 
     #Poppy speaks 
-    show Poppy  happy at sprite_pos
+    show Poppy  happy at sprite_carpos
 
     p "Come on, guys, the box is glowing more let's go."
     p "Look guys, let's follow that firefly. I think it will lead us somewhere."
@@ -130,7 +136,7 @@ label videoA1:
     $ renpy.movie_cutscene("movies/Subchoicemodified.mpg")
 
     #shows texts of Poppy
-    show Poppy  happy at sprite_pos
+    show Poppy  happy at sprite_carpos
 
     p "Look Guys"
 
@@ -143,7 +149,7 @@ label videoA1:
     # plys the final aniamtion 
     $ renpy.movie_cutscene("movies/TresureOneGem.mpg")
 
-    show Luma  happy at sprite_pos
+    show Luma  happy at sprite_carpos
 
     l "Wow guys, we made it."
     l "What a siblings adventure."
@@ -151,7 +157,7 @@ label videoA1:
     hide Luma
 
     scene bg happyscene
-    show Narrator happy at sprite_pos
+    show Narrator happy at sprite_carpos
 
     e "Luma, Gomas, and Poppy head back home, happy that their sibling adventure has come to an end."
 
@@ -161,7 +167,7 @@ label videoA1:
 
 label videoA2:
     
-    show Poppy happy at sprite_pos
+    show Poppy happy at sprite_carpos
 
     p "Let me try this way"
 
@@ -170,7 +176,7 @@ label videoA2:
     
 
     #This is what i added
-    show Poppy  happy at sprite_pos
+    show Poppy  happy at sprite_carpos
 
     p "Look guys, the box is glowing more."
 
@@ -180,7 +186,7 @@ label videoA2:
     $ renpy.movie_cutscene("movies/Subchoicemodified.mpg")
 
     #shows texts of Poppy
-    show Luma  happy at sprite_pos
+    show Luma  happy at sprite_carpos
 
     l "What is happening? I think the box will explode."
 
@@ -194,7 +200,7 @@ label videoA2:
     $ renpy.movie_cutscene("movies/3gemsfound.mpg")
     
 
-    show Poppy  happy at sprite_pos
+    show Poppy  happy at sprite_carpos
 
     p "Wow guys, look at all these gems."
     p "One for you, Luma"
@@ -205,7 +211,7 @@ label videoA2:
     
     scene bg happyscene
 
-    show Narrator happy at sprite_pos
+    show Narrator happy at sprite_carpos
 
     e "Luma, Gomas, and Poppy head back home, happy that their sibling adventure has come to an end."
 
@@ -214,12 +220,12 @@ label videoA2:
 
 
 label videoA3:
-    show Gomas  happy at sprite_pos
+    show Gomas  happy at sprite_carpos
 
     g "You can do it."
 
     hide Gomas
-    show Poppy happy at sprite_pos
+    show Poppy happy at sprite_carpos
 
     p "I think this one… and this one… yes!"
 
@@ -233,7 +239,7 @@ label videoA3:
     $ renpy.movie_cutscene("movies/Allpathswalkmod.mpg")
 
     #shows texts of Poppy
-    show Luma  happy at sprite_pos
+    show Luma  happy at sprite_carpos
 
     l "I am a little bit scared… it's been a few hours now walking."
 
@@ -243,7 +249,7 @@ label videoA3:
     $ renpy.movie_cutscene("movies/StopZone.mpg")
 
     
-    show Poppy  sad at sprite_possad
+    show Poppy  sad at  sprite_carpos
 
     p "Oh no, we haven't solved the mystery!"
     p "Sorry guys."
@@ -251,7 +257,7 @@ label videoA3:
     hide Poppy
 
    
-    show Gomas  sad  at sprite_pos
+    show Gomas  sad  at sprite_carpos
     g "Don't worry Poppy."
 
     hide Gomas 
@@ -278,7 +284,7 @@ label videoB1:
     # changes the bacgkround scene.
     scene bg forest2
     
-    show Narrator happy at sprite_pos
+    show Narrator happy at sprite_carpos
 
     e "Gomas leads the group along a sunny path."
 
@@ -287,7 +293,7 @@ label videoB1:
     $ renpy.movie_cutscene("movies/Starmarked.mpg")
     #"You choose option 1."
 
-    show Gomas happy at sprite_pos
+    show Gomas happy at sprite_carpos
 
     g "We're getting close!"
 
@@ -297,7 +303,7 @@ label videoB1:
     $ renpy.movie_cutscene("movies/Gomaswalks.mpg")
 
     #shows texts of Poppy
-    show Poppy  happy at sprite_pos
+    show Poppy  happy at sprite_carpos
 
     p "Gomas, are you sure you read the right coordinates on the map?"
 
@@ -306,13 +312,13 @@ label videoB1:
     # Shows keyfround and chest 
     $ renpy.movie_cutscene("movies/Lostincave.mpg")
 
-    show Gomas  sad  at sprite_pos
+    show Gomas  sad  at sprite_carpos
     g "Oops, sorry… but I think I confused North and South."
 
     hide Gomas
 
 
-    show Poppy  sad  at sprite_pos
+    show Poppy  sad  at sprite_carpos
     g "Don't worry, Gomas, things like that can happen."
 
     hide Poppy 
@@ -321,7 +327,7 @@ label videoB1:
     return
 
 label videoB2:
-    show Gomas happy at sprite_pos
+    show Gomas happy at sprite_carpos
 
     g "The box likes this path. Look at the water!"
 
@@ -335,7 +341,7 @@ label videoB2:
     $ renpy.movie_cutscene("movies/Allpathswalkmod.mpg")
 
     #shows texts of Poppy
-    show Luma  happy at sprite_pos
+    show Luma  happy at sprite_carpos
 
     l "Look guys, the box keeps glowing and glowing."
 
@@ -345,7 +351,7 @@ label videoB2:
     $ renpy.movie_cutscene("movies/Keyfround.mpg")  
     $ renpy.movie_cutscene("movies/OpenTree.mpg")
     
-    show Gomas  happy at sprite_pos
+    show Gomas  happy at sprite_carpos
 
     g "Look at that chest, guys!"
 
@@ -357,7 +363,7 @@ label videoB2:
     
     
 
-    show Luma happy at sprite_pos
+    show Luma happy at sprite_carpos
 
     l "Grandpa Joe left us this letter, that we need to treasure for all our life."
     l "Well done, brother — you led us to the right path."
@@ -365,7 +371,7 @@ label videoB2:
     hide Luma
 
     scene bg happyscene
-    show Narrator happy at sprite_pos
+    show Narrator happy at sprite_carpos
 
     e "Luma, Gomas, and Poppy head back home, happy that their sibling adventure has come to an end."
 
@@ -377,13 +383,13 @@ label videoB3:
 
     scene bg forest1
 
-    show Gomas happy at sprite_pos
+    show Gomas happy at sprite_carpos
 
     g "Oh! I missed this symbol.It means old trees."
 
     hide Gomas
 
-    show Poppy happy at sprite_pos
+    show Poppy happy at sprite_carpos
 
     p "Then that's where we go"
 
@@ -395,7 +401,7 @@ label videoB3:
 
 
     #shows texts of Poppy
-    show Gomas  happy at sprite_pos
+    show Gomas  happy at sprite_carpos
 
     g "Look guys, over there!"
 
@@ -404,13 +410,13 @@ label videoB3:
     # plys the final aniamtion of Cave
     $ renpy.movie_cutscene("movies/Lostincave.mpg")
     
-    show Gomas  happy at sprite_pos
+    show Gomas  happy at sprite_carpos
 
     g "Guys, I think we got lost… ahh, see? The box stopped glowing."
 
     hide Gomas
 
-    show Luma happy at sprite_pos
+    show Luma happy at sprite_carpos
 
     l "Let's go back home."
     l "Don't worry, Gomas"
@@ -435,7 +441,7 @@ label optionC_menu:
 
 label videoC1:
     
-    show Narrator happy at sprite_pos
+    show Narrator happy at sprite_carpos
 
     e "Poppy presses a small buzzer. The box pops slightly and sparkles burst out."
 
@@ -445,7 +451,7 @@ label videoC1:
     #"You choose option 1."
 
     #shows texts of Poppy
-    show Poppy  happy at sprite_pos
+    show Poppy  happy at sprite_carpos
 
     p "Let's follow that spark."
 
@@ -454,7 +460,7 @@ label videoC1:
     #shows a subchpice video 
     $ renpy.movie_cutscene("movies/Allpathswalkmod.mpg")
 
-    show Poppy  happy at sprite_pos
+    show Poppy  happy at sprite_carpos
 
     p "Siblings, come on "
 
@@ -463,7 +469,7 @@ label videoC1:
     $ renpy.movie_cutscene("movies/StopZone.mpg")
     
     
-    show Poppy happy at sprite_pos
+    show Poppy happy at sprite_carpos
 
     p "Oh no, we're lost"
     p "Sorry guys."
@@ -476,13 +482,13 @@ label videoC1:
    
 
 label videoC2:
-    show Narrator happy at sprite_pos
+    show Narrator happy at sprite_carpos
 
     e "Luma moves Poppy aside."
 
     hide Narrator
 
-    show Poppy happy at sprite_pos
+    show Poppy happy at sprite_carpos
 
     p "Careful, Luma."
 
@@ -492,7 +498,7 @@ label videoC2:
     $ renpy.movie_cutscene("movies/Boxflys.mpg")
     #"You choose option 2."
 
-    show Luma  happy at sprite_pos
+    show Luma  happy at sprite_carpos
 
     l "See? It want us to follow."
 
@@ -502,7 +508,7 @@ label videoC2:
     #$ renpy.movie_cutscene("movies/Subchoice.mpg")
 
     #shows texts of Poppy
-    show Luma  happy at sprite_pos
+    show Luma  happy at sprite_carpos
 
     l "Come on guys lets follow the box."
 
@@ -516,7 +522,7 @@ label videoC2:
     # plys the final aniamtion of letter found
     $ renpy.movie_cutscene("movies/Tresurechestletterfound.mpg")
     
-    show Luma  happy at sprite_pos
+    show Luma  happy at sprite_carpos
 
     l "Sweet Grandpa  Joe"
     l "He wanted to leave us a special message "
@@ -525,7 +531,7 @@ label videoC2:
 
     scene bg happyscene
 
-    show Narrator happy at sprite_pos
+    show Narrator happy at sprite_carpos
 
     e "Luma, Gomas, and Poppy head back home, happy that their sibling adventure has come to an end."
 
@@ -534,7 +540,7 @@ label videoC2:
     return
 
 label videoC3:
-    show Narrator happy at sprite_pos
+    show Narrator happy at sprite_carpos
 
     e "Luma shakes the box. A tiny wooden compass pops out and magically spins, pointing to the north."
 
@@ -549,7 +555,7 @@ label videoC3:
     $ renpy.movie_cutscene("movies/Gomaswalks.mpg")
 
     #shows texts of Poppy
-    show Luma  happy at sprite_pos
+    show Luma  happy at sprite_carpos
 
     l "Come on guys, over there."
 
@@ -562,19 +568,19 @@ label videoC3:
     # plys a unique ending and found a frame
     $ renpy.movie_cutscene("movies/Framefound.mpg")
     
-    show Luma happy at sprite_pos
+    show Luma happy at sprite_carpos
 
     l "We did it, siblings. Well done!"
 
     hide Luma
 
-    show Gomas happy at sprite_pos
+    show Gomas happy at sprite_carpos
 
     g "Well done,Luma"
 
     hide Gomas
 
-    show Poppy happy at sprite_pos
+    show Poppy happy at sprite_carpos
 
     p "Sweet Grandpaster Joe"
     p "He wanted to give us this picture, the one he treasured a lot."
@@ -583,7 +589,7 @@ label videoC3:
 
     scene bg happyscene
     
-    show Narrator happy at sprite_pos
+    show Narrator happy at sprite_carpos
 
     e "Luma, Gomas, and Poppy head back home, happy that their sibling adventure has come to an end."
 
